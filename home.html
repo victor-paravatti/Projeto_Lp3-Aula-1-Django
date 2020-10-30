@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1 align="center">
+    <img src="https://ik.imagekit.io/VictorParavatti/LogoProjeto_Pretos_e_Brancos_UHHztdi3S.png">
+
+</h1>
+  
+    <form align='center' method = "post">
+         {% csrf_token %}
+         <input name="variavel" id=""type="texto">
+         <button type="submit">Gerar</button>
+    </form>
+    <br>
+    <h2 align='center'>---------------------------------------------------------------------------------</h2>
+    <br>
+     <form align='center' >        
+    <h1 align='center'>
+        {% for jogo in jogos %}
+            <font color="blue"> Jogo {{ forloop.counter }}</font> : {% for j in jogo %}{{j}} {% endfor %} &nbsp;
+            <br>
+    {% endfor %}
+    </h1>
+    <input type="reset">
+    </form>
+    <br>
+    <h2 align='center'>---------------------------------------------------------------------------------</h2>  
+    <br>
+    <h1 align='center'> Numeros  &nbsp; &nbsp; - &nbsp; Repetições </h1> <br>
+    <h1 align='center'> {% for i in repeticoes %}
+        {{ forloop.counter }} &nbsp; - &nbsp; {{i}} <br>
+    {% endfor %}
+    </h1>
+
+</body>
+</html>

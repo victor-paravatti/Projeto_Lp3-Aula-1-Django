@@ -16,15 +16,15 @@ def home(request):
                 numero = randint(1, 25)
                 if numero not in jogo:
                     jogo.append(numero)
-                    count += 10
+                    count += 1
             jogos.append(jogo)
         
         for i in range(1, 26):
             count = 0
             for j in jogos:
                 if i in j:
-                    count =+ 1
+                    count += 1
             repeticoes.append(count)
-    contexto = {'jogos': jogos, 'repeticoes': repeticoes}   
+    contexto = {'jogos': jogos, 'repeticoes': repeticoes }   
     return render(request,'home.html', contexto)
 
